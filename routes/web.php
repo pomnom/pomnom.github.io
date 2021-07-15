@@ -3,6 +3,7 @@
 use App\Models\Flora;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FloraMController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -16,21 +17,9 @@ use App\Http\Controllers\FloraMController;
 |
 */
 
-Route::get('/', [FloraMController::class, 'index']);
+Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('/flora', function () {
-    return view('flora.index',  [
-        "judul" => "Flora",
-        "data" => Flora::all(),
-    ]);
-});
-
-Route::get('/flora/{slug}', function ($slug) {
-    return view('flora.detail',  [
-        "judul" => $slug,
-        "data" => Flora::cari($slug)
-    ]);
-});
+Route::get('/flora', [FloraMController::class, 'index']) ;
 
 Route::get('/flora/tambah', function () {
     return view('flora.tambah',  [

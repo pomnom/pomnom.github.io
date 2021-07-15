@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div class="parallax" style="filter: brightness(80%)"><img src="{{ url('/img/bg4.jpg') }}"></div>
+        <div class="parallax" style="filter: brightness(80%)"><img src="{{ url('/img/bg3.jpg') }}"></div>
     </div>
     <br><br>
     <div class="container">
@@ -35,18 +35,22 @@
                     @php
                         $no = 1;
                     @endphp
-                    @foreach ($data as $p)
+                    @foreach ($dataFloras as $p)
                         <tr>
                             <td class="center"><a style="text-decoration: none; color: black"
-                                    href="/flora/{{ $p['slug'] }}">{{ $no++ }}</a></td>
+                                    href="#">{{ $no++ }}</a></td>
                             <td class="center"><a style="text-decoration: none; color: black"
-                                    href="/flora/{{ $p['slug'] }}">{{ $p['nama_flora'] }}</a></td>
+                                    href="#">{{ $p['nama_flora'] }}</a></td>
                             <td class="center"><a style="text-decoration: none; color: black"
-                                    href="/flora/{{ $p['slug'] }}"><i>{{ $p['nama_latin'] }}</i></a></td>
+                                    href="#"><i>{{ Str::limit($p['deskripsi'], 50) }}</i></a></td>
                             <td class="center"><a style="text-decoration: none; color: black"
-                                    href="/flora/{{ $p['slug'] }}">{{ $p['jumlah'] }}</a></td>
+                                    href="#">{{ $p['jumlah'] }}</a></td>
                             <td class="center"><a style="text-decoration: none; color: black"
-                                    href="/flora/{{ $p['slug'] }}">{{ $p['status'] }}</a></td>
+                                    href="#">@if ($p['status']===true)
+                                    Langka
+                                @else
+                                    Banyak
+                                @endif</a></td>
                             <td class="center">
                                 <a id="b4" class="waves-effect waves-light red lighten-1 btn"><i
                                         class="material-icons left">delete</i>Hapus</a>

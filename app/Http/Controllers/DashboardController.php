@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dashboard;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class DashboardController extends Controller
 {
@@ -14,7 +15,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
+        $floras = Http::get(("https://flora-service-nuraksa.herokuapp.com/flora"));
+        $dataFLoras = $floras->json();
+        return view('dashboard',['dataFloras'=>$dataFLoras, 'judul'=>"Dashboard"]);
     }
 
     /**

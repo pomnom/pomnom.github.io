@@ -17,7 +17,7 @@ class FloraMController extends Controller
     {
         $floras = Http::get(("https://flora-service-nuraksa.herokuapp.com/flora"));
         $dataFLoras = $floras->json();
-        return view('dashboard',['dataFloras'=>$dataFLoras, 'judul'=>"Dashboard"]);
+        return view('/flora.index',['dataFloras'=>$dataFLoras, 'judul'=>"Flora"]);
     }
 
     /**
@@ -47,9 +47,9 @@ class FloraMController extends Controller
      * @param  \App\Models\FloraM  $floraM
      * @return \Illuminate\Http\Response
      */
-    public function show(FloraM $floraM)
+    public function show(FloraM $slug)
     {
-        //
+        
     }
 
     /**
