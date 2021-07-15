@@ -10,6 +10,8 @@
     {{-- Datatables --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     {{-- Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,11 +108,27 @@
     <script type="text/javascript" language="javascript"
         src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" language="javascript"
-        src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+        src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" class="init">
         $(document).ready(function() {
             $('#example').DataTable({
                 "scrollX": true
+            });
+        });
+    </script>
+    <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            var table = $('#example1').DataTable({
+                rowReorder: {
+                    selector: 'td:nth-child(2)'
+                },
+                responsive: true,
+                "searching": false,
+                "paging": false,
+                "paging": false,
+                "info": false
             });
         });
     </script>

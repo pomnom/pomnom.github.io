@@ -62,15 +62,14 @@
     <div class="section">
         <div class="container">
             <div class="card">
-                <table id="flora" class="display nowrap" style="width:100%">
+                <table id="example1" class="display nowrap" style="width:100%">
                     <thead>
                         <tr>
                             <th class="center">No</th>
                             <th class="center">Nama</th>
-                            <th class="center">Nama Latin</th>
+                            <th class="center">Deskripsi</th>
                             <th class="center">Jumlah</th>
                             <th class="center">Status</th>
-                            <th class="center">Deskripsi</th>
                         </tr>
 
                     </thead>
@@ -85,14 +84,15 @@
                                 <td class="center"><a style="text-decoration: none; color: black"
                                         href="#">{{ $p['nama_flora'] }}</a></td>
                                 <td class="center"><a style="text-decoration: none; color: black"
-                                        href="#"><i>{{ $p['deskripsi'] }}</i></a></td>
+                                        href="#"><i>{{ Str::limit($p['deskripsi'], 50) }}</i></a></td>
                                 <td class="center"><a style="text-decoration: none; color: black"
                                         href="#">{{ $p['jumlah'] }}</a></td>
                                 <td class="center"><a style="text-decoration: none; color: black"
-                                        href="#">{{ $p['status'] }}</a></td>
-                                <td class="center">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, esse!
-                                </td>
+                                        href="#">@if ($p['status']===true)
+                                            Langka
+                                        @else
+                                            Banyak
+                                        @endif</a></td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -100,10 +100,9 @@
                         <tr>
                             <th class="center">No</th>
                             <th class="center">Nama</th>
-                            <th class="center">Nama Latin</th>
+                            <th class="center">Deskripsi</th>
                             <th class="center">Jumlah</th>
                             <th class="center">Status</th>
-                            <th class="center">Deskripsi</th>
                         </tr>
                     </tfoot>
                 </table>
