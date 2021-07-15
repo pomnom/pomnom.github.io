@@ -2,6 +2,7 @@
 
 use App\Models\Flora;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FloraMController;
 
 
 /*
@@ -15,12 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard', [
-        "judul" => "Dashboard",
-        "data" => Flora::all(),
-    ]);
-});
+Route::get('/', [FloraMController::class, 'index']);
 
 Route::get('/flora', function () {
     return view('flora.index',  [

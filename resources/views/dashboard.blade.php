@@ -78,18 +78,18 @@
                         @php
                             $no = 1;
                         @endphp
-                        @foreach ($data as $p)
+                        @foreach ($dataFloras as $p)
                             <tr>
                                 <td class="center"><a style="text-decoration: none; color: black"
-                                        href="/flora/{{ $p['slug'] }}">{{ $no++ }}</a></td>
+                                        href="#">{{ $no++ }}</a></td>
                                 <td class="center"><a style="text-decoration: none; color: black"
-                                        href="/flora/{{ $p['slug'] }}">{{ $p['nama_flora'] }}</a></td>
+                                        href="#">{{ $p['nama_flora'] }}</a></td>
                                 <td class="center"><a style="text-decoration: none; color: black"
-                                        href="/flora/{{ $p['slug'] }}"><i>{{ $p['nama_latin'] }}</i></a></td>
+                                        href="#"><i>{{ $p['deskripsi'] }}</i></a></td>
                                 <td class="center"><a style="text-decoration: none; color: black"
-                                        href="/flora/{{ $p['slug'] }}">{{ $p['jumlah'] }}</a></td>
+                                        href="#">{{ $p['jumlah'] }}</a></td>
                                 <td class="center"><a style="text-decoration: none; color: black"
-                                        href="/flora/{{ $p['slug'] }}">{{ $p['status'] }}</a></td>
+                                        href="#">{{ $p['status'] }}</a></td>
                                 <td class="center">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, esse!
                                 </td>
