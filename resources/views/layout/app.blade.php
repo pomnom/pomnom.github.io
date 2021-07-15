@@ -128,7 +128,8 @@
                 "searching": false,
                 "paging": false,
                 "paging": false,
-                "info": false
+                "info": false,
+                "scrollX": true
             });
         });
     </script>

@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="parallax" style="filter: brightness(80%)"><img src="{{ url('/img/bg4.jpg') }}"></div>
+        <div class="parallax" style="filter: brightness(80%)"><img src="{{ url('/img/bg3.jpg') }}"></div>
     </div>
 
     <div class="section">
